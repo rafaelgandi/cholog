@@ -1,0 +1,22 @@
+{
+  "name": "cholog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "fs-jetpack": "^0.9.1",
+    "mysql": "^2.11.1",
+    "node-querybuilder": "^0.12.0",
+    "nodemon": "^1.9.2",
+    "print_r": "0.0.1",
+    "underscore": "^1.8.3"
+  }
+}
