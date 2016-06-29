@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title><%= title %></title>
+        
+    </head>
+    <body>
+		<h1>Server Info</h1>
+		<ul>
+			<li> Directory -> <%= dirname %>
+			<li> Filename -> <%= filename %>
+			<li> Express Environment -> <%= expressEnv %>
+			<li> originalUrl -> <%= originalUrl %>
+			<li> method -> <%= method %>
+			<li> Url -> <%= url %>
+			<li> full Url -> <%= fullUrl %>
+			<li> base path -> <%= basePath %>
+			<li> named route -> <%= app.namedRoutes.build('info') %>
+		</ul>
+    </body>
+</html>

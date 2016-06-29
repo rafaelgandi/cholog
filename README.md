@@ -1,2 +1,3 @@
-# cholog
-Simple node js app to store text snippets online
+The OpenShift `nodejs` cartridge documentation can be found at:
+
+http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs
