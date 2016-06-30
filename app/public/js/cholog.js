@@ -5,7 +5,7 @@ jQuery(function ($) {
 		root = $(document);
 	
 	function save(_notes, _callback) {
-		$.post('/save', {
+		$.post(window.CHOLOG.saveUri, {
 			notes: _notes
 		}, function (res) {
 			if (!! res.error) {

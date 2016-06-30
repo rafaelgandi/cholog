@@ -19,9 +19,9 @@ Routes.prototype.init = function () {
 	// NOTE: you can also separate your routes.
 	// See: http://expressjs.com/en/4x/api.html#router
 	this.app.all('/', 'home', wasabi.controller('ChologController@home', this.app));
-	this.app.all('/foo', 'foo', wasabi.controller('BaseController@foo', this.app));
 	this.app.all('/info', 'info', wasabi.controller('BaseController@info', this.app));
-	this.app.post('/save', 'info', wasabi.controller('ChologController@save', this.app));
+	this.app.post('/save', 'save', wasabi.controller('ChologController@save', this.app));
+	this.app.all('/wasabi/get/logs', 'wasabi_get_logs', wasabi.controller('WasabiController@getLogs', this.app));
 	// Set 404 here //
 	this.app.use(wasabi.controller('BaseController@notFound404', this.app));
 };

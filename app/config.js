@@ -14,7 +14,7 @@ var config = {
 		// Openshift Account 
 		// https://www.openshift.com/
 		// un: rafaelgandi@gmail.com 
-		// pw: ******** <-- the usual
+		// pw: ********* <-- the usual
 		// See: https://blog.openshift.com/run-your-nodejs-projects-on-openshift-in-two-simple-steps/
 		port: function () { return process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8888; },		
 		ipaddress: function () { return process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'; } 

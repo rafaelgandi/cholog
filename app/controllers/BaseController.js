@@ -34,8 +34,4 @@ BaseController.prototype.notFound404 = function (req, res) {
 	});
 };
 
-BaseController.prototype.foo = function (req, res) {
-	res.send('fooooooogfgfo!');
-}
-
 module.exports = BaseController;

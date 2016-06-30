@@ -284,7 +284,9 @@ textarea {
 /* ================================================================ */
 
 body {
-	background-color: #A1E5B8;
+	/* background-color: #A1E5B8; */
+	background-color: #E9E9E8;
+	padding-bottom: 50px;
 }
 
 #notes {
@@ -293,26 +295,40 @@ body {
 	min-height: 500px;
 	padding: 10px;
 	margin: 0 auto;
-	border: 0;
+	border: 1px solid #ccc;
 	border-radius: 10px;
 	background-color: #FBF7B4;
 	font-family: consolas;
+	font-size: 19px;
 }
 
 #submit {
 	display: block;
-	width: 95%;
+	width: 100%;
 	margin: 0 auto;
 	margin-top: 25px;
+	background-color: #21C256;
+	color: #fff;
+	border: 0;
+	padding: 10px;
+	border-radius: 3px;
+}
+
+#submit:hover {
+	background-color: #43CB6F;
 }
 
 h1 {
 	text-align: center;
+	font-family: 'Kanit', sans-serif;
+	font-size: 70px;
+	color: #353436;
+	margin-bottom: 0.37em;
 }
 
 h1 img {
 	width: 100px;
 	height: 97px;
-	border-radius: 50px;
-	background-color: #FBF7B4;
+	/* border-radius: 50px;
+	background-color: #FBF7B4; */
 }

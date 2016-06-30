@@ -9,12 +9,14 @@ global.__base = __dirname;
 global._m = function (_mod) {
 	return __base + '/app/' + _mod;
 };
+
 var express = require('express'), // See: http://expressjs.com/
 	config = require('./app/config'),
 	wasabi = require('./app/wasabi/base'),
+	xplog = require(_m('wasabi/xplog')),
 	path = require('path'),
 	app = express();
-	
+		
 function Boot() {
 	this.IPADDRESS = config.server.ipaddress();
 	this.PORT = config.server.port();
@@ -22,6 +24,10 @@ function Boot() {
 
 Boot.prototype.runMiddlewares =  function () {
 	var bodyParser = require('body-parser');
+	// Change ejs delimiters 
+	// http://ejs.co/
+	var ejs = require('ejs'); 	
+	ejs.delimiter  = '?'; 
 	// See: http://expressjs.com/en/guide/using-middleware.html
 	app.set('view engine', 'ejs'); // See: http://ejs.co/
 	app.set('views', __dirname + '/app/views');	
@@ -57,7 +63,6 @@ Boot.prototype.startServer = function () {
 	  console.log('Current app listening on port ' + _this.PORT);
 	  console.log('Environment: ' + app.get('env'));
 	  console.log('Dir Name: ' + __dirname);
-	  //console.log('Dir Name 2: ' + path.resolve(__dirname, 'app/public'));
 	});
 	return this;
 };
