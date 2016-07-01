@@ -304,7 +304,7 @@ body {
 
 #submit {
 	display: block;
-	width: 100%;
+	width: 98%;
 	margin: 0 auto;
 	margin-top: 25px;
 	background-color: #21C256;
@@ -331,4 +331,27 @@ h1 img {
 	height: 97px;
 	/* border-radius: 50px;
 	background-color: #FBF7B4; */
+}
+
+@media screen and (max-width: 568px) {
+	body {
+		overflow-x: hidden;
+	}
+	h1 {
+		font-size: 50px;
+	}
+
+	h1 img {
+		width: 90px;
+		height: 87px;
+	}
+	#notes {
+		width: 87%;
+		font-size: 20px;
+	}
+	
+	#submit {		
+		font-size: 25px;
+		width: 87%;
+	}
 }

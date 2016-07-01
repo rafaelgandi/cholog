@@ -3,7 +3,7 @@ var util = require('util'),
 	path = require('path');
 
 function BaseController(app) {
-	this.app = app
+	this.app = app;
 	console.log('!!!!!!!!!! from base controller !!!!!!!!!!');
 }
 
@@ -32,6 +32,10 @@ BaseController.prototype.notFound404 = function (req, res) {
 	res.status(404).render('404', {
 		title: '404 nothing found'
 	});
+};
+
+BaseController.prototype.testing = function () {
+	return this.app;
 };
 
 module.exports = BaseController;

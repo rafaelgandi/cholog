@@ -4,6 +4,14 @@ jQuery(function ($) {
 		$submit = $('#submit'),
 		root = $(document);
 	
+	
+	// Check if on mobile and inside an iframe, then redirect to the openshift site.
+	// See: http://stackoverflow.com/a/14301832
+	if ((typeof window.orientation !== 'undefined') && (window.self !== window.top)) {
+		window.top.location.href = 'http://cholog-rafaelgandi.rhcloud.com/';
+	}		
+
+	
 	function save(_notes, _callback) {
 		$.post(window.CHOLOG.saveUri, {
 			notes: _notes

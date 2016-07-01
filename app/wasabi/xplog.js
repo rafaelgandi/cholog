@@ -1,8 +1,6 @@
 var jetpack = require('fs-jetpack'); // See: https://github.com/szwacz/fs-jetpack 
 
-var logFile = __base + '/app/storage/debug.log';
-
-module.exports = function (_msg, _data) {
+var xplog = function (_msg, _data) {
 	var nl = "\n",
 		data = {},
 		MESSAGE = '',
@@ -18,16 +16,16 @@ module.exports = function (_msg, _data) {
 			data.method = _data.req.method;
 			data.ip = _data.req.ip;
 		}
-		if (!! _data.filename) {
-			data.filename = _data.filename;
-		}
+		if (!! _data.filename) { data.filename = _data.filename; }
 	}	
-	else {
-		data.filename = _data;
-	}
+	else { data.filename = _data; }
 	MESSAGE = nl + 'INFO - ' + time + ' --> ' + JSON.stringify(data);
 	console.log(MESSAGE);
-	jetpack.append(logFile, MESSAGE, {
+	jetpack.append(xplog.logFile, MESSAGE, {
 		mode: '777'
 	});
 };
+
+xplog.logFile = __base + '/app/storage/debug.log';
+
+module.exports = xplog;

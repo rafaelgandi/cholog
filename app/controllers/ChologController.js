@@ -5,8 +5,8 @@ var util = require('util'),
 	ChologBase = require(_m('cholog/base'));
 
 function ChologController(app) {
-	BaseController.call(this);
-	this.app = app	
+	// See: http://stackoverflow.com/questions/27018033/javascript-call-parent-constructor-in-the-child-prototypical-inheritance-how
+	BaseController.call(this, app);	
 }	
 // See: https://nodejs.org/docs/latest/api/util.html#util_util_inherits_constructor_superconstructor	
 // See: http://metaduck.com/08-module-pattern-inheritance.html
@@ -24,7 +24,6 @@ ChologController.prototype.home = function (req, res) {
 		});
 		//xplog('Get notes!!!', arguments.callee);
 	});
-	
 }
 
 ChologController.prototype.save = function (req, res) {
