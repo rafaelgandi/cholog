@@ -3,6 +3,7 @@ var util = require('util'),
 	xplog = require(_m('wasabi/xplog')),
 	BaseController = require(_m('controllers/BaseController')),
 	ChologBase = require(_m('cholog/base'));
+var config = require(_m('config'));	
 
 function ChologController(app) {
 	// See: http://stackoverflow.com/questions/27018033/javascript-call-parent-constructor-in-the-child-prototypical-inheritance-how
@@ -20,7 +21,10 @@ ChologController.prototype.home = function (req, res) {
 			title: 'Cholog hoooray!',
 			app: _this.app,
 			fullUrl: wasabi.getUrl(req),
-			notes: notes
+			notes: notes,
+			url: wasabi.getUrl(req),
+			pusherKey: config.realtime.pusher.key,
+			realtimeChannel: config.realtime.channel,
 		});
 		//xplog('Get notes!!!', arguments.callee);
 	});

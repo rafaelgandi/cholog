@@ -11,7 +11,11 @@ jQuery(function ($) {
 		window.top.location.href = 'http://cholog-rafaelgandi.rhcloud.com/';
 	}		
 
-	
+	var pusher = new Pusher(window.CHOLOG.pusherKey, {
+      encrypted: true
+    });
+	var channel = pusher.subscribe(window.CHOLOG.realtimeChannel);
+
 	function save(_notes, _callback) {
 		$.post(window.CHOLOG.saveUri, {
 			notes: _notes
@@ -37,7 +41,14 @@ jQuery(function ($) {
 				$submit.text('Save').attr('disabled', false);
 			});
 			return false;
+		},
+		
+		Rt: {
+			onNewNote: function(data) {
+				$('#notes').val(data.notes);
+			}
 		}
 	};
 	root.on('submit', '#cholog_form', Events.onSave);
+	channel.bind('save', Events.Rt.onNewNote);
 });

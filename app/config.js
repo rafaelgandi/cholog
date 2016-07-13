@@ -18,6 +18,19 @@ var config = {
 		// See: https://blog.openshift.com/run-your-nodejs-projects-on-openshift-in-two-simple-steps/
 		port: function () { return process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 8888; },		
 		ipaddress: function () { return process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'; } 
+	},
+	
+	realtime: {
+		// https://dashboard.pusher.com
+		// un: rafael@sushidigital.com.au
+		// pw: lea****123
+		pusher: {
+			appId: '225006',
+			key: 'c1972e8943792cb40206',
+			secret: '18ddb562f9d735e03936',
+			encrypted: true
+		},
+		channel: 'cholog'
 	}
 };
 module.exports = config;

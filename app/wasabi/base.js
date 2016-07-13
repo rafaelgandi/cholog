@@ -22,4 +22,5 @@ Wasabi.prototype.getCurrentFullUrl = function (_req) {
 	return this.getUrl(_req) + _req.originalUrl;
 };
 
+
 module.exports = new Wasabi;

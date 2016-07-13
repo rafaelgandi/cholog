@@ -4,6 +4,7 @@ var util = require('util'),
 	jetpack = require('fs-jetpack'),
 	BaseController = require(_m('controllers/BaseController'));
 
+
 function WasabiController(app) {
 	BaseController.call(this, app);
 }

@@ -10,13 +10,16 @@ global._m = function (_mod) {
 	return __base + '/app/' + _mod;
 };
 
-var express = require('express'), // See: http://expressjs.com/
-	config = require('./app/config'),
-	wasabi = require('./app/wasabi/base'),
-	xplog = require(_m('wasabi/xplog')),
-	path = require('path'),
-	app = express();
-		
+var express = require('express'); // See: http://expressjs.com/
+var config = require(_m('config'));
+var wasabi = require(_m('wasabi/base'));
+var xplog = require(_m('wasabi/xplog'));
+var path = require('path');
+
+var app = express();
+global.CHOLOG = {};	
+global.CHOLOG.EXPRESS_APP = app;	
+
 function Boot() {
 	this.IPADDRESS = config.server.ipaddress();
 	this.PORT = config.server.port();

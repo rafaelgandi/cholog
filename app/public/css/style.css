@@ -304,9 +304,10 @@ body {
 
 #submit {
 	display: block;
-	width: 98%;
+	width: 95%;
 	margin: 0 auto;
 	margin-top: 25px;
+	margin-bottom: 25px;
 	background-color: #21C256;
 	color: #fff;
 	border: 0;
