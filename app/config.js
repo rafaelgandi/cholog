@@ -31,6 +31,12 @@ var config = {
 			encrypted: true
 		},
 		channel: 'cholog'
+	},
+	
+	dropbox: {
+		appKey: 'epboops64g6zctu',
+		appSecret: 'trd6zo0a0renaq1',
+		accessToken: 'g3V5-J5idpsAAAAAAAAA36YxR5636jEVjxYkrh3lUgkykmEeUPW-IzEWgeVcOggU'
 	}
 };
 module.exports = config;

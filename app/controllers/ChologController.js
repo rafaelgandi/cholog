@@ -28,7 +28,7 @@ ChologController.prototype.home = function (req, res) {
 		});
 		//xplog('Get notes!!!', arguments.callee);
 	});
-}
+};
 
 ChologController.prototype.save = function (req, res) {
 	// See: https://scotch.io/tutorials/use-expressjs-to-get-url-and-post-parameters
@@ -41,6 +41,6 @@ ChologController.prototype.save = function (req, res) {
 			success: true
 		});
 	});	
-}
+}; 
 
 module.exports = ChologController;
